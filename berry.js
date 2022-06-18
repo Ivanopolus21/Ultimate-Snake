@@ -1,13 +1,17 @@
-import { onSnake, expandSnake } from './snake.js';
+import { onSnake, expandSnake, speedUp, snakeSpeed } from './snake.js';
 import { randomGridPosition } from './grid.js';
 
 let berry = getRandomBerryPosition();
 const expansionRate = 1;
+const expansionSpeed = 3;
 
 export const update = () => {
   if (onSnake(berry)) {
-    expandSnake(expansionRate);
     berry = getRandomBerryPosition();
+    expandSnake(expansionRate, expansionSpeed);
+    if (snakeSpeed == 1) {
+      speedUp(4);
+    }
   }
 };
 
