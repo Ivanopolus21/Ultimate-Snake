@@ -8,7 +8,7 @@ const map = document.getElementById('gameMap');
 const loop = (currentTime) => {
 	if (gameOver) {
 		if(confirm('You lost. Press OK to restart')) {
-			window.location = '/'
+			window.location.reload();
 		}
 		return;
 	}
