@@ -10,8 +10,8 @@ export const update = () => {
   if (onSnake(berry)) {
     berry = getRandomBerryPosition();
     expandSnake(expansionRate, expansionSpeed);
-    if (snakeSpeed == 1) {
-      speedUp(4);
+    if (snakeSpeed == 2) {
+      speedUp(6);
     }
     audio.pause();
   }
