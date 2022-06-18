@@ -7,7 +7,7 @@ let apple = getRandomApplePosition();
 export const update = () => {
   if (onSnake(apple)) {
     apple = getRandomApplePosition();
-    speedDown(1);
+    speedDown(2);
     audio.play();
   }
 };
@@ -27,4 +27,3 @@ function getRandomApplePosition() {
   }
   return newApplePosition;
 }
-
