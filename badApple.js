@@ -1,12 +1,14 @@
 import { onSnake, speedDown } from './snake.js';
 import { randomGridPosition } from './grid.js';
 
+export const audio = new Audio('bad_apple.mp3');
 let apple = getRandomApplePosition();
 
 export const update = () => {
   if (onSnake(apple)) {
     apple = getRandomApplePosition();
     speedDown(1);
+    audio.play();
   }
 };
 

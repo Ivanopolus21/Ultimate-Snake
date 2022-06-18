@@ -1,4 +1,5 @@
 import { onSnake, expandSnake, speedUp, snakeSpeed } from './snake.js';
+import { audio } from './badApple.js';
 import { randomGridPosition } from './grid.js';
 
 let berry = getRandomBerryPosition();
@@ -9,9 +10,10 @@ export const update = () => {
   if (onSnake(berry)) {
     berry = getRandomBerryPosition();
     expandSnake(expansionRate, expansionSpeed);
-    if (snakeSpeed == 1) {
-      speedUp(4);
+    if (snakeSpeed == 15) {
+      speedUp(1);
     }
+    audio.pause();
   }
 };
 
