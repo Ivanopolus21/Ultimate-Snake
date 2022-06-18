@@ -1,5 +1,6 @@
 import {update as updateSnake, draw as drawSnake, snakeSpeed, getSnakeHead, snakeIntersection} from './snake.js';
 import {update as updateBerry, draw as drawBerry} from './berry.js';
+import {update as updateApple, draw as drawApple} from './badApple.js';
 import { outsideGrid } from './grid.js';
 let lastRenderTime = 0;
 let gameOver = false;
@@ -31,6 +32,7 @@ window.requestAnimationFrame(loop)
 const update = () => {
 	updateSnake();
 	updateBerry();
+	updateApple();
 	checkDeath();
 };
 
@@ -38,6 +40,7 @@ const draw = () => {
 	gameMap.innerHTML = '';
 	drawSnake(map);
 	drawBerry(map);
+	drawApple(map);
 };
 
 const checkDeath = () => {
