@@ -1,7 +1,7 @@
 import { getInputDirection } from "./input.js";
 
 export let snakeSpeed = 4;
-let flag = 0;
+export let flag = 0;
 const centerOfTheMap = 11;
 const snakeBody = [{x : centerOfTheMap, y : centerOfTheMap}];
 let newSegments = 0;
