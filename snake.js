@@ -2,6 +2,7 @@ import { getInputDirection } from "./input.js";
 
 export let snakeSpeed = 4;
 export let flag = 0;
+let savedSpeed = 0;
 const centerOfTheMap = 11;
 const snakeBody = [{x : centerOfTheMap, y : centerOfTheMap}];
 let newSegments = 0;
@@ -32,6 +33,7 @@ export const expandSnake = (expAmount, expSpeed) => {
 	newSegments += expAmount;
 	if (flag % 5 === 0) {
     snakeSpeed += expSpeed;
+    savedSpeed = snakeSpeed;
   }
   
 }
@@ -67,6 +69,6 @@ export const speedDown = (downAmount) => {
   snakeSpeed = downAmount;
 }
 
-export const speedUp = (upAmount) => {
-  snakeSpeed = upAmount;
+ export const speedUp = () => {
+  snakeSpeed = savedSpeed;
 }

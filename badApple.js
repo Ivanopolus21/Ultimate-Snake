@@ -1,22 +1,26 @@
 import { onSnake, speedDown, flag } from './snake.js';
 import { randomGridPosition } from './grid.js';
 
-export const audio = new Audio('bad_apple.mp3');
+export const audio = new Audio('audio/bad_apple.mp3');
+export const badAppleInfluence = 2;
 let apple = getRandomApplePosition();
 let checkForApple = 0;
 let existence;
 
+
 export const update = () => {
   if (existence  == 1) {
     if (onSnake(apple)) {
-    checkForApple = 1;
-    apple = getRandomApplePosition();
+      checkForApple = 1;
+      apple = getRandomApplePosition();
 
-    speedDown(2);
-    audio.play();
+      speedDown(badAppleInfluence);
+      audio.play();
+
     }
   }
 };
+
 
 export function draw (map) {
   const appleElement = document.createElement('div');
