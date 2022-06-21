@@ -1,4 +1,4 @@
-import { getInputDirection } from "./input.js";
+import { getInputDirection, controls } from "./input.js";
 
 export let snakeSpeed = 4;
 export let flag = 0;
@@ -9,6 +9,7 @@ let newSegments = 0;
 
 export const update = () => {
 	addSegments();
+  controls();
   const inputDirection = getInputDirection();
   for(let i = snakeBody.length - 2; i >= 0; i--) {
     snakeBody[i + 1] = { ...snakeBody[i] }
