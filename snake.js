@@ -1,7 +1,8 @@
 import { getInputDirection, controls } from "./input.js";
 
 export let snakeSpeed = 4;
-export let flag = 0;
+export let snakeLengthFlag = 1;
+export let appleFlag = 0;
 let savedSpeed = 0;
 const centerOfTheMap = 11;
 const snakeBody = [{x : centerOfTheMap, y : centerOfTheMap}];
@@ -30,11 +31,12 @@ export const draw = (map) => {
 };
 
 export const expandSnake = (expAmount, expSpeed) => {
-	flag += 1;
+	snakeLengthFlag += 1;
 	newSegments += expAmount;
-	if (flag % 5 === 0) {
+	if (snakeLengthFlag % 5 === 0) {
     snakeSpeed += expSpeed;
     savedSpeed = snakeSpeed;
+    appleFlag = 1;
   }
   
 }
@@ -70,6 +72,10 @@ export const speedDown = (downAmount) => {
   snakeSpeed = downAmount;
 }
 
- export const speedUp = () => {
+export const speedUp = () => {
   snakeSpeed = savedSpeed;
+}
+
+export const doingAppleZero = () => {
+  appleFlag = 0;
 }
