@@ -2,7 +2,7 @@ let inputDirection = { x: 0, y: 0 };
 let lastInputDirection = { x: 0, y: 0 };
 
 const codes = {
-		'ArrowLeft': false,
+	'ArrowLeft': false,
   'ArrowRight': false,
   'ArrowUp': false,
   'ArrowDown': false,
@@ -12,25 +12,23 @@ const codes = {
   'KeyS': false,
 };
 
-
 export function checkForTrue () {
-	if ((codes['ArrowUp'] == true || codes['KeyW'] == true) && lastInputDirection.y == 0) {
+	if ((codes['ArrowUp'] === true || codes['KeyW'] === true) && lastInputDirection.y === 0) {
 		inputDirection = { x: 0, y : -1};
 	}
 
-	if ((codes['ArrowDown'] == true || codes['KeyS'] == true) && lastInputDirection.y === 0) {
+	if ((codes['ArrowDown'] === true || codes['KeyS'] === true) && lastInputDirection.y === 0) {
 		inputDirection = { x: 0, y : 1};
 	}
 
-	if ((codes['ArrowRight'] == true || codes['KeyD'] == true) && lastInputDirection.x === 0){
+	if ((codes['ArrowRight'] === true || codes['KeyD'] === true) && lastInputDirection.x === 0){
 		inputDirection = { x: 1, y : 0};
 	}
 
-	if ((codes['ArrowLeft'] == true || codes['KeyA'] == true) && lastInputDirection.x === 0) {
+	if ((codes['ArrowLeft'] === true || codes['KeyA'] === true) && lastInputDirection.x === 0) {
 		inputDirection = { x: -1, y : 0};
 	}
-}
-
+};
 
 export function controls () {
 	window.addEventListener('keydown', (e) => {

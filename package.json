@@ -1,0 +1,27 @@
+{
+  "name": "ultimate-snake",
+  "version": "1.0.0",
+  "description": "This is the Ultimate Snake game!",
+  "main": "game.js",
+  "scripts": {
+    "test": "\"\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ivanopolus21/My-Big-Project.git"
+  },
+  "keywords": [
+    "game",
+    "js",
+    "snake"
+  ],
+  "author": "Ivan Yeremenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ivanopolus21/My-Big-Project/issues"
+  },
+  "homepage": "https://github.com/Ivanopolus21/My-Big-Project#readme",
+  "devDependencies": {
+    "eslint": "^8.18.0"
+  }
+}

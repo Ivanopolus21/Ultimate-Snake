@@ -1,11 +1,12 @@
-import { getInputDirection, controls } from "./input.js";
+import { getInputDirection, controls } from './input.js';
 
 export let snakeSpeed = 4;
 export let snakeLengthFlag = 1;
 export let appleFlag = 0;
-let savedSpeed = 0;
+const divider = 5;
 const centerOfTheMap = 11;
 const snakeBody = [{x : centerOfTheMap, y : centerOfTheMap}];
+let savedSpeed = 0;
 let newSegments = 0;
 
 export const update = () => {
@@ -30,52 +31,51 @@ export const draw = (map) => {
   })
 };
 
+
 export const expandSnake = (expAmount, expSpeed) => {
-	snakeLengthFlag += 1;
+  snakeLengthFlag += 1;
 	newSegments += expAmount;
-	if (snakeLengthFlag % 5 === 0) {
+	if (snakeLengthFlag % divider === 0) {
     snakeSpeed += expSpeed;
     savedSpeed = snakeSpeed;
     appleFlag = 1;
   }
-  
-}
+};
 
 export const onSnake = (position, { ignoreHead = false } = {} ) => {
   return snakeBody.some((segment, index) => {
 		if (ignoreHead && index === 0) return false;
 		return equalPositions(segment, position);
 	})
-}
+};
 
 export const getSnakeHead = () => {
   return snakeBody[0];
-}
+};
 
 export const snakeIntersection = () => {
 	return onSnake(snakeBody[0], { ignoreHead: true})
-}
+};
 
 const equalPositions = (snakePos, itemPos) => {
-	return (snakePos.x === itemPos.x && snakePos.y === itemPos.y);
-}
+  return (snakePos.x === itemPos.x && snakePos.y === itemPos.y);
+};
 
 const addSegments = () => {
 	for (let i = 0; i < newSegments; i++) {
 		snakeBody.push ({ ...snakeBody[snakeBody.length - 1] })
 	}
-
 	newSegments = 0;
-}
+};
 
-export const speedDown = (downAmount) => {
-  snakeSpeed = downAmount;
-}
-
-export const speedUp = () => {
+export const speedDown = () => {
   snakeSpeed = savedSpeed;
-}
-
+};
+  
+export const speedUp = (upAmount) => {
+  snakeSpeed = upAmount;
+};
+  
 export const doingAppleZero = () => {
   appleFlag = 0;
-}
+};
