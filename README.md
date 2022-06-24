@@ -12,4 +12,5 @@ You need to pick up the soul as soon as possible to neutralize the effect of the
 
 If you will encounter some troubles, bugs or simply want to share your opinion about the game or some potential improvements, write me in Telegram (@ivanopolus21) and I will answer as soon as possible!
 
-<code>🧻 Link on the game [here](https://ivanopolus21.github.io/Ultimate-Snake/)</code><br>. Have fun!
+<code> Link on the game [here](https://ivanopolus21.github.io/Ultimate-Snake/)</code><br>
+Have fun!
